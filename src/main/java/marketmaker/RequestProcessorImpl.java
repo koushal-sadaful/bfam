@@ -13,7 +13,7 @@ public class RequestProcessorImpl implements RequestProcessor {
     private DataOutputStream dataOutputStream;
     private BufferedReader bufferedReaderStream;
     private RequestParser requestParser;
-    private boolean isTerminated = false;
+    private boolean isAlive = true;
 
     public RequestProcessorImpl(BufferedReader readStream, DataOutputStream writeStream, PricingService pricingService) {
         this.pricingService = pricingService;
@@ -22,14 +22,18 @@ public class RequestProcessorImpl implements RequestProcessor {
         this.requestParser = new RequestParserImpl();
     }
 
+    public boolean isAlive() {
+        return isAlive;
+    }
+
     public void stop() {
-        this.isTerminated = true;
+        this.isAlive = false;
     }
 
     public void run() {
         System.out.println("Client Request Processor started for client");
 
-        while (!this.isTerminated) {
+        while (isAlive()) {
             try {
                 String instructionString = bufferedReaderStream.readLine();
                 System.out.println("Instruction: " + instructionString);

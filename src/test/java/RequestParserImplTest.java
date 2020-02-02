@@ -34,10 +34,10 @@ class RequestParserImplTest {
     }
 
     @Test
-    void canParseValidInstructionCaseInsensitive() {
+    void canParseValidInstructionCaseInsensitiveWithSpaces() {
         Request userRequest = null;
         try {
-            userRequest = requestParserUnderTest.parseFromString("123 bUy 100");
+            userRequest = requestParserUnderTest.parseFromString(" 123 bUy 100 ");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -68,8 +68,10 @@ class RequestParserImplTest {
             "123 BUY ",     //Incomplete Instruction
             "BUY 123   ",   //Incomplete Instruction with space
             "123 0BUY 103", //Invalid Instruction
+            "123 BUY. 103", //Invalid Instruction
             "123 SELL 0",   //Quantity Cannot Be Zero
             "123 SELL -100", //Quantity Cannot Be Negative
+            "123 SELL 100.", //missing decimal
             "123 SELL 1.5",  //Quantity Cannot Be Decimal
             "XXX SELL 100",   //Invalid ID
             "105.5 SELL 100",  //Invalid Number
