@@ -26,17 +26,6 @@ class PricingServiceImplTest {
     }
 
     @Test
-    void shouldGetPriceAndComputeQuoteCorrectly() {
-        Request testRequest = createRequest(5, true);
-        when(referencePriceSourceMock.get(securityID)).thenReturn(1.12);
-        when(quoteCalculationEngineMock.calculateQuotePrice(securityID, 1.12, true, 5)).thenReturn(11.2);
-
-        double quote = pricingServiceUnderTest.getQuotePrice(testRequest);
-        assertEquals(11.2, quote);
-        verify(referencePriceSourceMock, times(1)).subscribe(any(ReferencePriceSourceListener.class));
-    }
-
-    @Test
     void shouldSubscribeToReferencePriceSouceOncePerSecurityId() {
         when(referencePriceSourceMock.get(securityID)).thenReturn(1.12);
 
@@ -94,6 +83,44 @@ class PricingServiceImplTest {
         verify(referencePriceSourceMock, times(1)).subscribe(any(ReferencePriceSourceListener.class));
     }
 
+    @Test
+    void shouldGetPriceAndComputeQuoteCorrectlyIfSecurityIdNotInCache() {
+        Request testRequest = createRequest(5, true);
+        when(referencePriceSourceMock.get(securityID)).thenReturn(1.12);
+        when(quoteCalculationEngineMock.calculateQuotePrice(securityID, 1.12, true, 5)).thenReturn(11.2);
+
+        double quote = pricingServiceUnderTest.getQuotePrice(testRequest);
+        assertEquals(11.2, quote);
+        verify(referencePriceSourceMock, times(1)).subscribe(any(ReferencePriceSourceListener.class));
+    }
+
+    @Test
+    void shouldUseCachedReferencePriceOnSecondRequest() {
+        Request firstRequest = createRequest(5, true);
+        Request secondRequest = createRequest(15, false);
+        double firstPrice = 1.12;
+        double secondPrice = 1.14;
+        double expectedFirstQuote = 0.01;
+        double expectedSecondQuote = 10.01;
+
+        doAnswer(new Answer() {
+            @Override
+            public Object answer(InvocationOnMock invocation) throws Throwable {
+                ReferencePriceSourceListener callback = (ReferencePriceSourceListener) invocation.getArguments()[0];
+                callback.referencePriceChanged(securityID, secondPrice);
+
+                double secondFirstQuote = pricingServiceUnderTest.getQuotePrice(secondRequest);
+                assertEquals(expectedSecondQuote, secondFirstQuote);
+                return null;
+            }
+        }).when(referencePriceSourceMock).subscribe(any(ReferencePriceSourceListener.class));
+        when(referencePriceSourceMock.get(securityID)).thenReturn(firstPrice);
+        when(quoteCalculationEngineMock.calculateQuotePrice(securityID, firstPrice, firstRequest.isBuy(), firstRequest.getOrderQuantity())).thenReturn(expectedFirstQuote);
+        when(quoteCalculationEngineMock.calculateQuotePrice(securityID, secondPrice, secondRequest.isBuy(), secondRequest.getOrderQuantity())).thenReturn(expectedSecondQuote);
+
+        double actualFirstQuote = pricingServiceUnderTest.getQuotePrice(firstRequest);
+        assertEquals(expectedFirstQuote, actualFirstQuote);
+    }
 
     private Request createRequest(int quantity, boolean isBuy) {
         return new RequestImpl(securityID, quantity, isBuy);

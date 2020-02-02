@@ -18,7 +18,7 @@ Assumptions:
 6. All the classes implementing interfaces provided handle their errors gracefully and wont throw exceptions
 7. Security ID set is limited so subscriptions won't grow drastically
 8. Implementations of QCE and RPS, RPSL are abstracted
-9.
+9. QCE Engine always returns a correct quote
 
 Personal Thought Notes:
 1. To reduce subscriptions and lookup, reuse cache across clients

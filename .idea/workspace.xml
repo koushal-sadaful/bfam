@@ -1,7 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="718a5227-6738-4544-a9fc-a89f8bccbf7a" name="Default Changelist" comment="" />
+    <list default="true" id="718a5227-6738-4544-a9fc-a89f8bccbf7a" name="Default Changelist" comment="maven project setup included">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/META-INF/bfam-app.kotlin_module" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/marketmaker/App.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/marketmaker/PricingService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/marketmaker/PricingServiceImpl$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/marketmaker/PricingServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/marketmaker/QuoteCalculationEngine.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/marketmaker/ReferencePriceSource.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/marketmaker/ReferencePriceSourceListener.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/marketmaker/RequestProcessor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/marketmaker/RequestProcessorImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/marketmaker/TCPServer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/marketmaker/common/PriceValidator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/marketmaker/common/PriceValidatorImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/marketmaker/common/Request.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/marketmaker/common/RequestImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/marketmaker/common/RequestParser.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/marketmaker/common/RequestParserImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/META-INF/bfam-app.kotlin_module" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/PricingServiceImplTest$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/PricingServiceImplTest$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/PricingServiceImplTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/RequestImplTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/RequestParserImplTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/RequestProcessorImplTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/harness/Client.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/harness/QuoteCalculationEngineFake.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/harness/ReferencePriceSourceFake.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-result.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notes.md" beforeDir="false" afterPath="$PROJECT_DIR$/Notes.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/PricingServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PricingServiceImplTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,7 +72,7 @@
       <recent name="C:\dev\bfam-app\src\test\java" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PriceValidatorImplTest">
+  <component name="RunManager" selected="JUnit.PricingServiceImplTest">
     <configuration name="All in bfam-app" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="bfam-app" />
       <option name="PACKAGE_NAME" value="" />
@@ -57,10 +90,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PricingServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="bfam-app" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PricingServiceImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PricingServiceImplTest.shouldUseCachedReferencePriceOnSecondRequest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="bfam-app" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PricingServiceImplTest" />
+      <option name="METHOD_NAME" value="shouldUseCachedReferencePriceOnSecondRequest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PriceValidatorImplTest" />
+        <item itemvalue="JUnit.PricingServiceImplTest" />
+        <item itemvalue="JUnit.PricingServiceImplTest.shouldUseCachedReferencePriceOnSecondRequest" />
         <item itemvalue="JUnit.All in bfam-app" />
+        <item itemvalue="JUnit.PriceValidatorImplTest" />
       </list>
     </recent_temporary>
   </component>
@@ -86,12 +140,24 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1580635341211</updated>
-      <workItem from="1580635344662" duration="2241000" />
+      <workItem from="1580635344662" duration="3620000" />
     </task>
+    <task id="LOCAL-00001" summary="maven project setup included">
+      <created>1580637759776</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1580637759776</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="maven project setup included" />
+    <option name="LAST_COMMIT_MESSAGE" value="maven project setup included" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="70" key="#Project_Structure" timestamp="1580635504396">
@@ -102,34 +168,54 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2414" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580636741893" />
-    <state x="2505" y="114" key="CommitChangelistDialog2" timestamp="1580637757254">
+    <state x="2505" y="114" width="1172" height="812" key="CommitChangelistDialog2" timestamp="1580638953866">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2505" y="114" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580637757254" />
-    <state x="2258" y="172" key="DiffContextDialog" timestamp="1580637728086">
+    <state x="2505" y="114" width="1172" height="812" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580638953866" />
+    <state x="2258" y="172" key="DiffContextDialog" timestamp="1580638919110">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2258" y="172" key="DiffContextDialog/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580637728086" />
-    <state width="1875" height="281" key="GridCell.Tab.0.bottom" timestamp="1580637596076">
+    <state x="2258" y="172" key="DiffContextDialog/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580638919110" />
+    <state width="1875" height="281" key="GridCell.Tab.0.bottom" timestamp="1580638887025">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="281" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580637596076" />
-    <state width="1875" height="281" key="GridCell.Tab.0.center" timestamp="1580637596076">
+    <state width="1875" height="281" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580638887025" />
+    <state width="1875" height="281" key="GridCell.Tab.0.center" timestamp="1580638887025">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="281" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580637596076" />
-    <state width="1875" height="281" key="GridCell.Tab.0.left" timestamp="1580637596076">
+    <state width="1875" height="281" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580638887025" />
+    <state width="1875" height="281" key="GridCell.Tab.0.left" timestamp="1580638887025">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="281" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580637596076" />
-    <state width="1875" height="281" key="GridCell.Tab.0.right" timestamp="1580637596076">
+    <state width="1875" height="281" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580638887025" />
+    <state width="1875" height="281" key="GridCell.Tab.0.right" timestamp="1580638887025">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="281" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580637596076" />
+    <state width="1875" height="281" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580638887025" />
+    <state width="1875" height="347" key="GridCell.Tab.1.bottom" timestamp="1580638877942">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1875" height="347" key="GridCell.Tab.1.bottom/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580638877942" />
+    <state width="1875" height="347" key="GridCell.Tab.1.center" timestamp="1580638877941">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1875" height="347" key="GridCell.Tab.1.center/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580638877941" />
+    <state width="1875" height="347" key="GridCell.Tab.1.left" timestamp="1580638877941">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1875" height="347" key="GridCell.Tab.1.left/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580638877941" />
+    <state width="1875" height="347" key="GridCell.Tab.1.right" timestamp="1580638877942">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1875" height="347" key="GridCell.Tab.1.right/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580638877942" />
     <state x="299" y="67" key="Maven.ArtifactSearchDialog" timestamp="1580635853655">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="299" y="67" key="Maven.ArtifactSearchDialog/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1580635853655" />
+    <state x="2695" y="453" key="ReplaceDuplicatesPrompt" timestamp="1580638299825">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2695" y="453" key="ReplaceDuplicatesPrompt/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580638299825" />
     <state x="2360" y="94" key="SettingsEditor" timestamp="1580636158024">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -138,9 +224,36 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2727" y="435" key="VCS.ChangelistChooser/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580637715958" />
+    <state x="2524" y="134" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1580638831437">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2524" y="134" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580638831437" />
+    <state x="130" y="0" width="1420" height="716" maximized="true" key="dock-window-1" timestamp="1580637951870">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="130" y="0" width="1420" height="716" maximized="true" key="dock-window-1/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580637951870" />
+    <state x="2610" y="275" width="540" height="499" key="extract.method.dialog" timestamp="1580638297315">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2610" y="275" width="540" height="499" key="extract.method.dialog/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580638297315" />
     <state x="2262" y="215" key="new project wizard" timestamp="1580636802970">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2262" y="215" key="new project wizard/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580636802970" />
+    <state x="2535" y="240" key="run.anything.popup" timestamp="1580638422154">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2535" y="240" key="run.anything.popup/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580638422154" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/marketmaker/PricingServiceImpl.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
