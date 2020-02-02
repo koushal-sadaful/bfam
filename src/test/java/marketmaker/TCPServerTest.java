@@ -11,6 +11,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class TCPServerTest {
 
+    int testPort = 3000;
+
     @BeforeEach
     void setUp() {
         try {
@@ -24,10 +26,9 @@ class TCPServerTest {
     }
 
 
-
     @Test
     void canProcessValidRequestFromSingleClient() {
-        TestClient testClient = new TestClient(3000);
+        TestClient testClient = new TestClient(testPort);
         testClient.start();
         String response = testClient.executeInstruction("1223 BUY 80");
         assertEquals("8000.0", response);
@@ -36,7 +37,7 @@ class TCPServerTest {
 
     @Test
     void canProcessInvalidRequestFromSingleClient() {
-        TestClient testClient = new TestClient(3000);
+        TestClient testClient = new TestClient(testPort);
         testClient.start();
         String response = testClient.executeInstruction("12343");
         assertEquals("Invalid arguments supplied: {Instruction format is incorrect: {security ID} (BUY|SELL) {quantity} }", response);
@@ -45,8 +46,8 @@ class TCPServerTest {
 
     @Test
     void canProcessRequestFromMultipleClients() {
-        TestClient testClient = new TestClient(3000);
-        TestClient testClient1 = new TestClient(3000);
+        TestClient testClient = new TestClient(testPort);
+        TestClient testClient1 = new TestClient(testPort);
         testClient.start();
         testClient1.start();
         String response = testClient.executeInstruction("12343");

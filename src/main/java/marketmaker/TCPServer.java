@@ -8,13 +8,7 @@ public class TCPServer implements Runnable {
 
     private PricingService pricingService;
     private boolean isAlive = true;
-
-    public static int getPORT() {
-        return PORT;
-    }
-
     static final int PORT = 3000;
-
 
     public TCPServer(PricingService pricingService) {
         this.pricingService = pricingService;

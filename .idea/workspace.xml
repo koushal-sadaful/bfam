@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="718a5227-6738-4544-a9fc-a89f8bccbf7a" name="Default Changelist" comment="maven project setup included">
-      <change afterPath="$PROJECT_DIR$/src/test/java/harness/ManualClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/harness/TestClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/marketmaker/TCPServerTest.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/target/classes/marketmaker/PricingService.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/target/classes/marketmaker/PricingServiceImpl$1.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/target/classes/marketmaker/PricingServiceImpl.class" afterDir="false" />
@@ -23,16 +20,8 @@
       <change afterPath="$PROJECT_DIR$/target/test-classes/harness/QuoteCalculationEngineFake.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/target/test-classes/harness/ReferencePriceSourceFake.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/marketmaker/RequestProcessorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/marketmaker/RequestProcessorImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/marketmaker/TCPServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/marketmaker/TCPServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PriceValidatorImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/marketmaker/PriceValidatorImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PricingServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/marketmaker/PricingServiceImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/RequestImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/marketmaker/RequestImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/RequestParserImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/marketmaker/RequestParserImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/RequestProcessorImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/marketmaker/RequestProcessorImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/harness/Client.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/harness/ReferencePriceSourceFake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/harness/ReferencePriceSourceFake.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/harness/TCPServerHarness.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/marketmaker/TCPServerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/marketmaker/TCPServerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +97,7 @@
       <recent name="C:\dev\bfam-app\src\test\java" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TCPServerTest">
+  <component name="RunManager" selected="JUnit.All in bfam-app">
     <configuration name="All in bfam-app" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="bfam-app" />
       <option name="PACKAGE_NAME" value="" />
@@ -175,10 +164,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in bfam-app" />
         <item itemvalue="JUnit.TCPServerTest" />
         <item itemvalue="JUnit.TCPServerTest.canProcessValidRequestFromSingleClient" />
         <item itemvalue="JUnit.TCPServerTest.canProcessRequestFromSingleClient" />
-        <item itemvalue="JUnit.All in bfam-app" />
         <item itemvalue="JUnit.RequestProcessorImplTest" />
       </list>
     </recent_temporary>
@@ -205,7 +194,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1580635341211</updated>
-      <workItem from="1580635344662" duration="17665000" />
+      <workItem from="1580635344662" duration="17877000" />
     </task>
     <task id="LOCAL-00001" summary="maven project setup included">
       <created>1580637759776</created>
@@ -235,7 +224,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580650305893</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="clean up some tests">
+      <created>1580661328280</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1580661328280</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -246,7 +242,8 @@
     <MESSAGE value="test quote engine on quote update" />
     <MESSAGE value="fix issues with error handling and stop thread" />
     <MESSAGE value="add new line to be able to test with actual Client'" />
-    <option name="LAST_COMMIT_MESSAGE" value="add new line to be able to test with actual Client'" />
+    <MESSAGE value="clean up some tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="clean up some tests" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="70" key="#Project_Structure" timestamp="1580635504396">
@@ -277,18 +274,18 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2757" y="222" width="964" height="595" key="#xdebugger.evaluate/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580648604935" />
-    <state x="2505" y="114" width="1172" height="812" key="CommitChangelistDialog2" timestamp="1580656563903">
+    <state x="2505" y="114" width="1172" height="812" key="CommitChangelistDialog2" timestamp="1580661512211">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2505" y="114" width="1172" height="812" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580656563903" />
+    <state x="2505" y="114" width="1172" height="812" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580661512211" />
     <state width="470" height="466" key="DebuggerActiveHint" timestamp="1580640606573">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="470" height="466" key="DebuggerActiveHint/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580640606573" />
-    <state x="2258" y="172" key="DiffContextDialog" timestamp="1580650279888">
+    <state x="2258" y="172" key="DiffContextDialog" timestamp="1580661315730">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2258" y="172" key="DiffContextDialog/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580650279888" />
+    <state x="2258" y="172" key="DiffContextDialog/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580661315730" />
     <state width="607" height="713" key="GridCell.Tab.-1.bottom" timestamp="1580646511149">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -305,22 +302,22 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="607" height="713" key="GridCell.Tab.-1.right/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580646511149" />
-    <state width="1875" height="290" key="GridCell.Tab.0.bottom" timestamp="1580661275821">
+    <state width="1875" height="290" key="GridCell.Tab.0.bottom" timestamp="1580661493518">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="290" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580661275821" />
-    <state width="1875" height="290" key="GridCell.Tab.0.center" timestamp="1580661275820">
+    <state width="1875" height="290" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580661493518" />
+    <state width="1875" height="290" key="GridCell.Tab.0.center" timestamp="1580661493518">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="290" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580661275820" />
-    <state width="1875" height="290" key="GridCell.Tab.0.left" timestamp="1580661275820">
+    <state width="1875" height="290" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580661493518" />
+    <state width="1875" height="290" key="GridCell.Tab.0.left" timestamp="1580661493518">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="290" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580661275820" />
-    <state width="1875" height="290" key="GridCell.Tab.0.right" timestamp="1580661275820">
+    <state width="1875" height="290" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580661493518" />
+    <state width="1875" height="290" key="GridCell.Tab.0.right" timestamp="1580661493518">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="290" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580661275820" />
+    <state width="1875" height="290" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580661493518" />
     <state width="1875" height="276" key="GridCell.Tab.1.bottom" timestamp="1580649422220">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
