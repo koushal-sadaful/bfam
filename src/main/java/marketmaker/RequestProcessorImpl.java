@@ -31,6 +31,7 @@ public class RequestProcessorImpl implements RequestProcessor {
     }
 
     public void run() {
+        this.isAlive = true;
         System.out.println("Client Request Processor started for client");
 
         while (isAlive()) {

@@ -11,6 +11,6 @@ public class ReferencePriceSourceFake implements ReferencePriceSource {
     }
 
     public double get(int securityId) {
-        return Math.random() * 100;
+        return 100;
     }
 }

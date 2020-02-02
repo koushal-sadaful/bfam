@@ -4,17 +4,25 @@ import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class TCPServer {
+public class TCPServer implements Runnable {
 
     private PricingService pricingService;
+    private boolean isAlive = true;
+
+    public static int getPORT() {
+        return PORT;
+    }
+
+    static final int PORT = 3000;
+
 
     public TCPServer(PricingService pricingService) {
         this.pricingService = pricingService;
     }
 
-    static final int PORT = 3000;
 
-    public void start() {
+    public void run() {
+        isAlive = true;
         ServerSocket serverSocket = null;
 
         try {
@@ -39,6 +47,12 @@ public class TCPServer {
 
             new RequestProcessorImpl(bufferedReaderStream, dataOutputStream, this.pricingService).run();
 
-        } while (true);
+        } while (isAlive);
     }
+
+    public void stop() {
+        isAlive = false;
+    }
+
+
 }

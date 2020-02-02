@@ -1,3 +1,5 @@
+package marketmaker;
+
 import marketmaker.common.PriceValidatorImpl;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;

@@ -1,3 +1,5 @@
+package marketmaker;
+
 import marketmaker.common.RequestImpl;
 import org.junit.jupiter.api.Test;
 
