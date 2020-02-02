@@ -7,10 +7,10 @@ public class ReferencePriceSourceFake implements ReferencePriceSource {
 
 
     public void subscribe(ReferencePriceSourceListener listener) {
-
+        return;
     }
 
     public double get(int securityId) {
-        return 0;
+        return Math.random() * 100;
     }
 }

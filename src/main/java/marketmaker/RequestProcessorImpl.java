@@ -48,11 +48,11 @@ public class RequestProcessorImpl implements RequestProcessor {
 
                     Double quote = pricingService.getQuotePrice(request);
                     System.out.println("Quote: " + quote.toString());
-                    dataOutputStream.writeDouble(quote);
+                    dataOutputStream.writeBytes(quote.toString() + "\n\r");
+                    dataOutputStream.flush();
                 } catch (Exception e) {
                     e.printStackTrace();
-                    dataOutputStream.writeBytes(e.getMessage());
-                } finally {
+                    dataOutputStream.writeBytes(e.getMessage() + "\n\r");
                     dataOutputStream.flush();
                 }
             } catch (Exception e) {

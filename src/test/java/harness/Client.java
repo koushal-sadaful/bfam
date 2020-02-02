@@ -11,7 +11,6 @@ public class Client {
 
     public static void main(String args[]) throws IOException{
 
-
         InetAddress address=InetAddress.getLocalHost();
         Socket s1=null;
         String line=null;

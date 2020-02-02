@@ -49,8 +49,8 @@ class RequestProcessorImplTest {
             when(bufferedReaderMock.readLine()).thenReturn("123 XXS 100");
             when(pricingServiceImplMock.getQuotePrice(any(Request.class))).thenReturn(11.3);
             requestProcessorImplUnderTest.run();
-            String errorMessage = getStringFromOutputStream();
-            assertEquals("Invalid arguments supplied: {Invalid Instruction. (BUY|SELL) only allowed! }", errorMessage);
+            String errorMessage = getStringFromOutputStream(outputStreamFake);
+            assertEquals("Invalid arguments supplied: {Invalid Instruction. (BUY|SELL) only allowed! }", errorMessage.trim());
         } catch (Exception e) {
             fail("Should not have thrown any exception");
             e.printStackTrace();
@@ -63,8 +63,8 @@ class RequestProcessorImplTest {
             when(bufferedReaderMock.readLine()).thenReturn("123");
             when(pricingServiceImplMock.getQuotePrice(any(Request.class))).thenReturn(11.3);
             requestProcessorImplUnderTest.run();
-            String errorMessage = getStringFromOutputStream();
-            assertEquals("Invalid arguments supplied: {Instruction format is incorrect: {security ID} (BUY|SELL) {quantity} }", errorMessage);
+            String errorMessage = getStringFromOutputStream(outputStreamFake);
+            assertEquals("Invalid arguments supplied: {Instruction format is incorrect: {security ID} (BUY|SELL) {quantity} }", errorMessage.trim());
         } catch (Exception e) {
             fail("Should not have thrown any exception");
             e.printStackTrace();
@@ -111,16 +111,16 @@ class RequestProcessorImplTest {
 
     private Double getDoubleFromOutputStream(ByteArrayOutputStream outputStream) {
         try {
-            return ByteBuffer.wrap(outputStreamFake.toByteArray()).getDouble();
+            return Double.parseDouble(getStringFromOutputStream(outputStream));
         } catch (Exception e) {
             System.out.println("Cant parse output stream to double");
         }
         return null;
     }
 
-    private String getStringFromOutputStream() {
+    private String getStringFromOutputStream(ByteArrayOutputStream outputStream) {
         try {
-            return new String(outputStreamFake.toByteArray());
+            return new String(outputStream.toByteArray());
         } catch (Exception e) {
             System.out.println("Cant parse output stream to string");
         }
