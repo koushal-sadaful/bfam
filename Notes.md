@@ -4,7 +4,7 @@ Specs:
     - dont dup subscriptions, maintain a cache
 3. Quote Calculation Slowness - Handle in requests
 4. Stress test with large requests, large requests x multiple clients
-    - will need to dev harness and setup data
+    - will need to dev harness and setup a client to send data?
 5. TCP Instructions - Validations
 6. Client disconnects abrubtly, handle gracefully
 7. Calc logic and Reference price logic is out of scope of dev
@@ -28,7 +28,8 @@ Personal Thought Notes:
    optimum number of threads for better resource management
 5. Use of interfaces decouples objects -> makes my life easier for testing
 6. Why use double when there is bigdecimal? -> Inacurracies in calc
-7.
+7. The Testing for TCP Server isnt ideal, need to read on better testing for multi-threading tasks
+8. 
 
 Principles:
 1. Test Driven Dev - Dont mock types you dont own

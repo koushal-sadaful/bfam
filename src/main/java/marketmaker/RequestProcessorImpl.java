@@ -6,6 +6,7 @@ import marketmaker.common.RequestParserImpl;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
+import java.io.IOException;
 
 public class RequestProcessorImpl implements RequestProcessor {
 
@@ -48,13 +49,11 @@ public class RequestProcessorImpl implements RequestProcessor {
                     }
 
                     Double quote = pricingService.getQuotePrice(request);
-                    System.out.println("Quote: " + quote.toString());
-                    dataOutputStream.writeBytes(quote.toString() + "\n\r");
-                    dataOutputStream.flush();
+                    System.out.println("Calculated Quote: " + quote.toString());
+                    writeToOutputStream(quote.toString());
                 } catch (Exception e) {
                     e.printStackTrace();
-                    dataOutputStream.writeBytes(e.getMessage() + "\n\r");
-                    dataOutputStream.flush();
+                    writeToOutputStream(e.getMessage());
                 }
             } catch (Exception e) {
                 e.printStackTrace();
@@ -62,6 +61,11 @@ public class RequestProcessorImpl implements RequestProcessor {
                 stop();
             }
         }
+    }
+
+    private void writeToOutputStream(String s) throws IOException {
+        dataOutputStream.writeBytes(s + "\n\r");
+        dataOutputStream.flush();
     }
 
 }
